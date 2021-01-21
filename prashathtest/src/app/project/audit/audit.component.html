@@ -1,0 +1,30 @@
+
+<button class="btn btn-primary" (click)="back()">Back</button>
+<div class="row">
+  Date Format: 
+    <select [(ngModel)]="date_format" (change)="dateFilter()">
+      <option value="12"> 12 Hr</option>
+      <option value="24"> 24 Hr</option>
+    </select>
+  
+</div>
+<div class="row">
+  <table >
+    <tr>
+      <th>Name</th>
+      <th>Desgination</th>
+      <th>Date</th>
+    </tr>
+    <tr *ngFor="let audit of audit_list| paginate : {
+      itemsPerPage: pageSize,
+      currentPage: p[i], id: id
+    }">
+      <td>{{audit.name}}</td>
+      <td>{{audit.Role}}</td>
+      <td>{{audit.Date}}</td>
+    </tr>
+  </table>
+  <div class="pagination-container">
+    <pagination-controls (pageChange)="p[i] = $event" [id]="id"></pagination-controls>
+  </div>
+</div>

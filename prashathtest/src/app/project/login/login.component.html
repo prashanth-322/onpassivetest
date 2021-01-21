@@ -1,0 +1,13 @@
+<form >
+
+  <div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" [(ngModel)]="userForm.username" name="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" [(ngModel)]="userForm.password" name="password" required>
+
+    <button type="submit" (click)="login()">Login</button>
+    <p style="color: red;" *ngIf="isWrong"> {{errormessage}} </p>
+  </div>
+</form>
