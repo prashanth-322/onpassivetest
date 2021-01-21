@@ -8,6 +8,7 @@
     <input type="password" placeholder="Enter Password" [(ngModel)]="userForm.password" name="password" required>
 
     <button type="submit" (click)="login()">Login</button>
+    <button type="submit" (click)="back()" style="margin-left: 10px;">Register</button>
     <p style="color: red;" *ngIf="isWrong"> {{errormessage}} </p>
   </div>
 </form>

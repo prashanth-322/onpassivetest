@@ -48,6 +48,10 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  back(){
+    this.route.navigate(['/register'])
+  }
+
 
 
 }
